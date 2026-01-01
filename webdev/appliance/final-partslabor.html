@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<title>Final Parts &amp; Labor</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+	
+    <script type="text/javascript">
+	
+		function getInfo() 
+		{
+            // Variables for the form input
+            var inputId = parseInt(document.getElementById("formInput").value);
+            var inputAll = document.getElementById("formInput").value; 
+            
+            // Making an array of dictionaries to store part information
+            var parts = [
+                { id: 1000, status: "In Stock", description: "Small Compressor Motor", cost: "72.95"},
+                { id: 1002, status: "In Stock", description: "Large Compress Motor", cost: "136.95"},
+                { id: 1004, status: "In Stock", description: "Miscellaneous Parts (Hose, Fittings, etc.)", cost: "19.95"},
+                { id: 1006, status: "In Stock", description: "Circulation Fan", cost: "17.75"},
+                { id: 1008, status: "In Stock", description: "Normal Labor", cost: "85"}
+            ];
+			
+			// Display results in the results div
+			var resultsDiv = document.getElementById("results");
+            // Clear the results, so the ALL results don't stack
+            resultsDiv.innerHTML = "";
+            
+            
+            /* Displaying all the info for when user types: ALL
+                where: https://www.w3schools.com/js/js_operators.asp
+                why: I need to concatenate the info and this is the same as typing allOutput = allOutput + output, it just saves time
+                how: using the += operator which is the same as "x=x+y"   */
+            if (inputAll == 'ALL') {
+                for (var i = 0; i < parts.length; i++) {
+                    resultsDiv.innerHTML += `
+                        <p>-----------------------------</p>
+                        <p>Part ID: ${parts[i].id}</p>
+                        <p>Status: ${parts[i].status}</p>
+                        <p>Part Description: ${parts[i].description}</p>
+                        <p>Part Retail Cost: ${parts[i].cost}</p>                        
+                        `;
+                }
+            }
+            else {
+                for (var i = 0; i < parts.length; i++) {
+                    if (parts[i].id === inputId) {
+                    
+                    resultsDiv.innerHTML = `
+                            <p>Part ID: ${parts[i].id}</p>
+                            <p>Status: ${parts[i].status}</p>
+                            <p>Part Description: ${parts[i].description}</p>
+                            <p>Part Retail Cost: ${parts[i].cost}</p>                        
+                            `;
+                    }
+                    
+                    
+                }
+            }
+		
+		}
+	
+	</script>
+    
+    
+</head>
+
+<body>
+	<p>
+		Luke Laricy <br />
+		IT 130-530 <br />
+        Final Project - Appliance Repair Website
+	</p>
+		
+	<hr>
+	
+	<h1>Parts &amp; Labor Information</h1>
+	<img src="images/partslabor.jpg" alt="Picture of Parts Stock Girl"/>
+	<p>&nbsp;</p>
+	
+			<h2>Part Lookup</h2>
+			
+			<p>
+                Please enter a Part ID or the word "ALL"<br>
+                <input type="text" id="formInput"><br>
+                            
+                <button type="button" onclick="getInfo()">SUBMIT</button>			
+			</p>
+			
+        
+    <!-- Using a Div tag so I can display the results -->
+	<div id="results" ></div>	
+			
+			
+			
+			
+	<p>&nbsp;</p>
+    <img src="images/LukeAppLogo.jpg" alt="Luke's Logo"/>
+	<p>&nbsp;</p>
+    
+	<p>Press the button to return to the Main Page<br>
+        <button type="button" onclick="location.href='final-mainpage.html'">Go to the Main Page</button>			
+	</p>
+		
+    <p>&nbsp;</p>
+    <hr>
+    <p class="copyright">&copy;Luktopia Technological Solutions 2025<p>
+
+
+
+</body>
+
+</html>	

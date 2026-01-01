@@ -1,0 +1,84 @@
+[
+    {
+        "name": "A+ Certification",
+        "issuer": "CompTIA",
+        "image": "img/CompTIA-APlus.png"
+    },
+    {
+        "name": "Network+ Certification",
+        "issuer": "CompTIA",
+        "image": "img/CompTIA-NetPlus.png"
+    },
+    {
+        "name": "Security+ Certification",
+        "issuer": "CompTIA",
+        "image": "img/CompTIA-SecPlus.png"
+    },
+    {
+        "name": "Associate in Applied Science",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-AssociateinScience.jpg"
+    },
+    {
+        "name": "Associate in Arts",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-AssociateinArts.jpg"
+    },
+    {
+        "name": "Phi Theta Kappa Honor Society",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-PhiThetaKappa.png"
+    },
+    {
+        "name": "High School Degree",
+        "issuer": "Marist High School",
+        "image": "img/MaristHS-Diploma.jpg"
+    },
+    {
+        "name": "Network Administrator Certification",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-NetworkAdministratorCert.jpg"
+    },
+    {
+        "name": "Cisco Network Associate Certification",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-CiscoNetworkAssociateCert.jpg"
+    },
+    {
+        "name": "Network Security Associate Certification",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-NetworkSecurityAssociate.jpg"
+    },
+    {
+        "name": "LAN Technician Certification",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-LANTechnicianCert.jpg"
+    },
+    {
+        "name": "Computer Technician Certification",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-ComputerTechnicianCert.jpg"
+    },
+    {
+        "name": "Computer Support Associate Certification",
+        "issuer": "Moraine Valley Community College",
+        "image": "img/MoraineValley-ComputerSupportAssociateCert.jpg"
+    },
+    {
+        "name": "IT Operations Specialist",
+        "issuer": "CompTIA",
+        "image": "img/CompTIA-StackITOps.png"
+    },
+    {
+        "name": "Secure Infrastructure Specialist",
+        "issuer": "CompTIA",
+        "image": "img/CompTIA-StackSecInfra.png"
+    },
+    {
+        "name": "Arduino Certification",
+        "issuer": "Arduino",
+        "image": "img/Arduino-Cert.png"
+    }
+    
+
+]

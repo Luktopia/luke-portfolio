@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<title>Final Technician Details</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+	
+    <script type="text/javascript">
+	
+		function getInfo() 
+		{
+            // Variables for the form input
+            var inputId = parseInt(document.getElementById("formInput").value);
+            var inputAll = document.getElementById("formInput").value; 
+            
+            //Variable for radio button selection
+            var timeSelection;
+                if (document.getElementById('fullT').checked) {
+                    timeSelection = document.getElementById('fullT').value;
+                } else if (document.getElementById('partT').checked) {
+                    timeSelection = document.getElementById('partT').value;
+                } else if (document.getElementById('allT').checked) {
+                    timeSelection = document.getElementById('allT').value;
+                } else {
+                    timeSelection = 'none';
+                }
+
+            // Making an array of dictionaries to store tech Information
+            var techs = [
+                { id: 1004, techName: "Lucy Manning", pay: "20.75", techStatus: "Full Time", startDate: "05/06/2019"},
+                { id: 1006, techName: "Zane Buck", pay: "16.75", techStatus: "Full Time", startDate: "10/21/2014"},
+                { id: 1002, techName: "Wyatt Parker", pay: "17.5", techStatus: "Part Time", startDate: "10/29/2012"},
+                { id: 1000, techName: "Sylvester Ortega", pay: "16.75", techStatus: "Full Time", startDate: "03/02/2021"}
+            ];
+            
+			// Display results in the results div
+			var resultsDiv = document.getElementById("results");
+            // Clear the results, so the ALL results don't stack
+            resultsDiv.innerHTML = "";
+            
+            /* Displaying all the info for when user types: ALL
+                where: https://www.w3schools.com/js/js_operators.asp
+                why: I need to concatenate the info and this is the same as typing allOutput = allOutput + output, it just saves time
+                how: using the += operator which is the same as "x=x+y"   */
+            if (inputAll == 'ALL' && timeSelection == 'fullTime') {
+                for (var i = 0; i < techs.length; i++) {
+                    if (techs[i].techStatus === 'Full Time') {
+                    
+                    resultsDiv.innerHTML += `
+                        <p>-----------------------------</p>
+                        <p>Tech ID: ${techs[i].id}</p>
+                        <p>Tech Status: ${techs[i].techStatus}</p>
+                        <p>Tech Name: ${techs[i].techName}</p>
+                        <p>Hourly Wage: ${techs[i].pay}</p> 
+                        <p>Start Date: ${techs[i].startDate}</p> 
+                        `;
+                    }
+                }
+            }
+            else if (inputAll == 'ALL' && timeSelection == 'partTime') {
+                for (var i = 0; i < techs.length; i++) {
+                    if (techs[i].techStatus === 'Part Time') {
+                    
+                    resultsDiv.innerHTML += `
+                        <p>-----------------------------</p>
+                        <p>Tech ID: ${techs[i].id}</p>
+                        <p>Tech Status: ${techs[i].techStatus}</p>
+                        <p>Tech Name: ${techs[i].techName}</p>
+                        <p>Hourly Wage: ${techs[i].pay}</p> 
+                        <p>Start Date: ${techs[i].startDate}</p> 
+                        `;
+                    }
+                }
+            }
+            else if (inputAll == 'ALL' && timeSelection == 'allTime') {
+                for (var i = 0; i < techs.length; i++) {
+                                        
+                    resultsDiv.innerHTML += `
+                        <p>-----------------------------</p>
+                        <p>Tech ID: ${techs[i].id}</p>
+                        <p>Tech Status: ${techs[i].techStatus}</p>
+                        <p>Tech Name: ${techs[i].techName}</p>
+                        <p>Hourly Wage: ${techs[i].pay}</p> 
+                        <p>Start Date: ${techs[i].startDate}</p> 
+                        `;
+                   
+                }
+            }
+            else if (inputAll == 'ALL' && timeSelection == 'none') {
+                alert("Please select a tech status!!!")
+            }
+            else {
+                for (var i = 0; i < techs.length; i++) {
+                    if (techs[i].id === inputId) {
+                    
+                    resultsDiv.innerHTML = `
+                        <p>Tech ID: ${techs[i].id}</p>
+                        <p>Tech Status: ${techs[i].techStatus}</p>
+                        <p>Tech Name: ${techs[i].techName}</p>
+                        <p>Hourly Wage: ${techs[i].pay}</p> 
+                        <p>Start Date: ${techs[i].startDate}</p>                     
+                        `;
+                    }
+                    
+                    
+                }
+            }
+           
+		
+		}
+	
+	</script>
+    
+    
+	
+</head>
+
+<body>
+
+	<p>
+		Luke Laricy <br />
+		IT 130-530 <br />
+        Final Project - Appliance Repair Website
+	</p>
+		
+	<hr>
+	
+	<h1>Technician Details</h1>
+	<img src="images/technician.jpg" alt="Picture of Technician Helping Customer"/>
+	<p>&nbsp;</p>
+	
+			<h2>Technician Lookup</h2>
+			
+			<p>
+                Please enter a Tech ID or the word "ALL"<br>
+                <input type="text" id="formInput"><br>
+                
+                <!-- Made a radio button select option and labeled it using the label tag, made the names the same so the user could only select one option - https://www.w3schools.com/html/html_form_input_types.asp -->
+                Please select tech status:<br>
+                <form>
+                      <input type="radio" id="fullT" name="timeSelector" value="fullTime">
+                      <label for="fullT">Full Time</label><br>
+                      <input type="radio" id="partT" name="timeSelector" value="partTime">
+                      <label for="partT">Part Time</label><br>
+                      <input type="radio" id="allT" name="timeSelector" value="allTime">
+                      <label for="allT">All</label>
+                </form><br>
+                
+                
+                
+                <button type="button" onclick="getInfo()">SUBMIT</button>			
+			</p>
+        
+    <!-- Using a Div tag so I can display the results -->
+	<div id="results" ></div>	
+			
+			
+			
+			
+	<p>&nbsp;</p>
+    <img src="images/LukeAppLogo.jpg" alt="Luke's Logo"/>
+	<p>&nbsp;</p>
+    
+	<p>Press the button to return to the Main Page<br>
+        <button type="button" onclick="location.href='final-mainpage.html'">Go to the Main Page</button>			
+	</p>
+		
+	<p>&nbsp;</p>
+    <hr>
+    <p class="copyright">&copy;Luktopia Technological Solutions 2025<p>
+</body>
+
+</html>	

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luke Laricy's Portfolio - Coding</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Prism.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <h1 class="title">Lukas Laricy</h1>
+            <h3 class="slogan">IT Professional</h3>
+
+            <button class="navButton" type="button" onclick="location.href='/index.html'">About Luke</button>
+            <button class="navButton" type="button" onclick="location.href='/webdev.html'">Websites</button>
+            <button class="navButton" type="button" onclick="location.href='/coding.html'">Code</button>
+            <button class="navButton" type="button" onclick="location.href='/writing.html'">Writings</button>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+    <h1 class="topHead">Coding Examples</h1>
+
+    <!-- Code Card 1 -->
+    <section class="code-card">
+        <div class="code-card-header">
+            <h2>Bank Account Class</h2>
+            <div class="badges">
+                <span class="badge">Python</span>
+                <span class="badge">OOP</span>
+                <span class="badge">Database</span>
+            </div>
+        </div>
+
+        <p class="code-description">
+            A modular banking system that supports deposits, withdrawals, transaction history, and persistent storage
+            through a custom database layer. This example demonstrates clean class design, encapsulation, and real-world
+            business logic.
+        </p>
+
+        <pre><code class="language-python">
+class BankAccount:
+    def __init__(self, first_name, last_name, starting_balance):
+        self._account_number = int(random.randint(1000000000, 9999999999))
+        self._first_name = str(first_name)
+        self._last_name = str(last_name)
+        self._account_balance = float(starting_balance)
+        self._transactions = []
+        self._database = bank_account_database.Database()
+        self._database.add_account(
+            self._account_number,
+            self._first_name,
+            self._last_name,
+            self._account_balance
+        )
+        </code></pre>
+
+        <a class="github-button" href="https://github.com/Luktopia/luke-it212-all/tree/main/L_Laricy_homework5" target="_blank">
+            View Full Project on GitHub
+        </a>
+    </section>
+
+    <!-- Code Card 2 -->
+
+    <section class="code-card">
+        <div class="code-card-header">
+            <h2>Database Backend (SQLite)</h2>
+            <div class="badges">
+                <span class="badge">Python</span>
+                <span class="badge">SQLite</span>
+                <span class="badge">Backend</span>
+            </div>
+        </div>
+
+        <p class="code-description">
+            A lightweight SQLite database layer used to store account information and transaction history.
+            This module handles table creation, inserts, updates, and queries, providing a clean backend
+            interface for the BankAccount class.
+        </p>
+
+        <pre><code class="language-python">
+class Database:
+    def __init__(self):
+        self._connection = sqlite3.connect('Bankaccts.db')
+        self._cursor = self._connection.cursor()
+        self.create_tables()
+
+    def create_tables(self):
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS accounts('
+                            'acct_num integer PRIMARY KEY,'
+                            'first_name varchar(50), last_name varchar(50),'
+                            'acct_balance real)')
+        
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS transactions('
+                            'trans_id integer PRIMARY KEY,'
+                            'trans_type varchar(10), trans_date varchar(20),'
+                            'acct_number integer, trans_amount real)')
+        
+        self.connection.commit()
+        </code></pre>
+
+        <a class="github-button" href="https://github.com/Luktopia/luke-it212-all/tree/main/L_Laricy_homework5" target="_blank">
+            View Full Project on GitHub
+        </a>
+    </section>
+
+    <!-- Code Card 3 -->
+
+    <section class="code-card">
+        <div class="code-card-header">
+            <h2>Grade Analysis Program</h2>
+            <div class="badges">
+                <span class="badge">Python</span>
+                <span class="badge">File I/O</span>
+                <span class="badge">Menu System</span>
+            </div>
+        </div>
+
+        <p class="code-description">
+            A menu-driven Python program that reads grades from a CSV file and calculates the highest,
+            lowest, and average values. This example demonstrates file handling, error checking,
+            data parsing, and modular function design.
+        </p>
+
+        <pre><code class="language-python">
+def highestGrade():
+    try:
+        fin = open("exam_grades.csv",'r', encoding='utf-8')
+    except FileNotFoundError:
+        print("Unable to open file. Program will terminate.")
+        return
+    contents = fin.read()
+    fin.close()
+    lstGrades = [float(x) for x in contents.split(",")]
+    print(f"The Highest Grade Is: {max(lstGrades)}")
+
+def lowestGrade():
+    try:
+        fin = open("exam_grades.csv",'r', encoding='utf-8')
+    except FileNotFoundError:
+        print("Unable to open file. Program will terminate.")
+        return
+    contents = fin.read()
+    fin.close()
+    lstGrades = [float(x) for x in contents.split(",")]
+    print(f"The Lowest Grade Is: {min(lstGrades)}")
+
+def averageGrade():
+    try:
+        fin = open("exam_grades.csv",'r', encoding='utf-8')
+    except FileNotFoundError:
+        print("Unable to open file. Program will terminate.")
+        return
+    contents = fin.read()
+    fin.close()
+    lstGrades = [float(x) for x in contents.split(",")]
+    print(f"The Average Grade Is: {sum(lstGrades)/len(lstGrades):.2f}")
+
+def printMenu():
+    menu = ('Enter a number:\n'
+            ' (1) Get Highest Grade\n'
+            ' (2) Get Lowest Grade\n'
+            ' (3) Get Average Grade\n'
+            ' Choose an option (1-3): ')
+    try:
+        return int(input(menu))
+    except ValueError:
+        return False
+
+def driver():
+    selection = printMenu()
+    if selection == False:
+        print('Error reading value from the user. Program will terminate.')
+        return
+    elif selection == 1:
+        highestGrade()
+    elif selection == 2:
+        lowestGrade()
+    elif selection == 3:
+        averageGrade()
+        </code></pre>
+
+        <a class="github-button" href="https://github.com/Luktopia/luke-it211-all/blob/main/assignment5-LukeLaricy.py" target="_blank">
+            View Full Project on GitHub
+        </a>
+    </section>
+
+    <!-- Code Card 4 -->
+
+    <section class="code-card">
+        <div class="code-card-header">
+            <h2>Telecom Analytics SQL Queries</h2>
+            <div class="badges">
+                <span class="badge">SQL</span>
+                <span class="badge">Joins</span>
+                <span class="badge">Aggregation</span>
+            </div>
+        </div>
+
+        <p class="code-description">
+            A collection of SQL queries written for a telecom-style database. These examples demonstrate
+            multi-table joins, grouping, aggregation, HAVING filters, and full dataset reconstruction.
+            They highlight practical SQL skills used in reporting, analytics, and backend data processing.
+        </p>
+
+        <pre><code class="language-sql">
+-- Query A: Active subscriptions
+SELECT C.CustomerName, S.Status, S.StartDate
+FROM fp.LLCUSTOMER AS C
+JOIN fp.LLSUBSCRIPTION AS S ON C.CustomerID = S.CustomerID
+WHERE S.Status = 'Active'
+ORDER BY S.StartDate;
+
+-- Query B: Total usage by activity type
+SELECT C.CustomerName, CO.ActivityType, SUM(CO.Quantity) AS TotalUse,
+       P.Minutes, P.DataGB, P.Texts
+FROM fp.LLCUSTOMER AS C
+JOIN fp.LLSUBSCRIPTION AS S ON C.CustomerID = S.CustomerID
+JOIN fp.LLMOBILEPLAN AS P ON P.PlanName = S.PlanName
+JOIN fp.LLCOMMS AS CO ON S.SubscriptionID = CO.SubscriptionID
+GROUP BY C.CustomerName, CO.ActivityType, P.Minutes, P.DataGB, P.Texts
+ORDER BY C.CustomerName, CO.ActivityType;
+
+-- Query C: Customers exceeding plan limits (Voice example)
+SELECT C.CustomerName, CO.ActivityType, SUM(CO.Quantity) AS TotalUse, P.Minutes
+FROM fp.LLCUSTOMER AS C
+JOIN fp.LLSUBSCRIPTION AS S ON C.CustomerID = S.CustomerID
+JOIN fp.LLMOBILEPLAN AS P ON P.PlanName = S.PlanName
+JOIN fp.LLCOMMS AS CO ON S.SubscriptionID = CO.SubscriptionID
+WHERE CO.ActivityType = 'Voice'
+GROUP BY C.CustomerName, CO.ActivityType, P.Minutes
+HAVING SUM(CO.Quantity) > P.Minutes;
+
+-- Query D: Recreate full spreadsheet
+SELECT
+    C.CustomerName AS 'Customer Name',
+    C.Address AS Address,
+    C.City AS City,
+    C.PostalCode AS 'Postal Code',
+    C.EmailAddress AS 'Email Address',
+    S.Status AS 'Subscription Status',
+    S.Discount AS 'Customer Discount',
+    S.StartDate AS 'Subscription Start Date',
+    P.PlanName AS 'Plan Name',
+    P.Minutes AS 'Voice Minutes',
+    P.DataGB AS 'Data GB',
+    P.Texts AS Texts,
+    P.Cost AS 'Plan Cost',
+    CO.UsageDateTime AS 'Usage Date/Time',
+    CO.ActivityType AS Activity,
+    CO.Quantity AS Quantity
+FROM fp.LLCUSTOMER AS C
+JOIN fp.LLSUBSCRIPTION AS S ON C.CustomerID = S.CustomerID
+JOIN fp.LLMOBILEPLAN AS P ON P.PlanName = S.PlanName
+JOIN fp.LLCOMMS AS CO ON S.SubscriptionID = CO.SubscriptionID
+ORDER BY C.CustomerID, S.SubscriptionID, CO.CommID;
+        </code></pre>
+
+        <a class="github-button" href="https://github.com/Luktopia/luke-it240-final/tree/main/IT-240-Final" target="_blank">
+            View SQL Project on GitHub
+        </a>
+    </section>
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer>
+        <p class="copyright">&copy; 2025 Luktopia Inc.</p>
+    </footer>
+
+
+    <script src="js/scripts.js"></script>
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+
+</body>
+</html>

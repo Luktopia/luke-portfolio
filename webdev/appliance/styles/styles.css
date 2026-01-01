@@ -1,0 +1,43 @@
+/* Luke Laricy Student ID# 0947632 */
+/* I have not given or received any unauthorized assistance on this assignment. I also understand that if I use any programming syntax not covered in class I am expected to cite the source and explain what it accomplishes and how it works. */
+
+body {
+	
+	font-family: verdana, geneva, sans-serif; /* Set font to Verdana, and provide backup options - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 232 */ 
+	
+	color: #00228a; /* Midnight Blue - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 248 */
+	
+	background-color: #ccffd0; /* Light Green - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 250 */	
+	
+}
+
+h1 {
+	
+	font-family: georgia, geneva, sans-serif; /* Set font for headline 1 to Georgia, and provide backup options - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 232 */ 
+	
+	color: #800000; /* Dark Red - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 248 */
+	
+}
+
+h2 {
+	
+	font-family: georgia, geneva, sans-serif; /* Set font for headline 2 to Georgia, and provide backup options - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 232 */ 
+	
+	color: #570000; /* Darker Red - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 248 */
+	
+}
+
+
+.copyright {
+   
+	font-family: georgia, geneva, sans-serif; /* Set font for headline 2 to Georgia, and provide backup options - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 232 */ 
+
+ 	color: #570000; /* Darker Red - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 248 */
+
+    text-align: center; /* Centering the text - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 259 */
+    
+    font-weight: bold; /* Bold Text - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 238 */
+    
+    font-size: smaller; /* Made the font size smaller - Elizabeth Castro's HTML and CSS Visual Quick Start Guide page 244 - https://www.w3schools.com/Tags/tag_small.asp */
+    
+}

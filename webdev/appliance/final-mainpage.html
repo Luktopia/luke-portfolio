@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<title>Final Main Page</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+	
+    	<script type="text/javascript">
+	
+            function gotoPage() 
+            {
+            
+                var pageChoice = document.getElementById("selPage").value;
+                
+                if (pageChoice == "cust") {
+                    location.href = 'final-customerinfo.html';
+                }                 
+                else if (pageChoice == "part") {
+                    location.href = 'final-partslabor.html';
+                }                 
+                else if (pageChoice == "tech") {
+                    location.href = 'final-technician.html';
+                }                 
+                else if (pageChoice == "serv") {
+                    location.href = 'final-servicerepair.html';
+                }
+            }
+        </script>
+        
+</head>
+
+<body>
+	<p>
+		Luke Laricy <br />
+		IT 130-530 <br />
+        Final Project - Appliance Repair Website
+	</p>
+		
+	<hr>
+	
+	<h1>Luke's Appliance Repair Service</h1>
+		<img src="images/mainpage.jpg" alt="Repair Guy and Customer"/>
+		<p>&nbsp;</p>
+		<h2>What Would You Like to Know More About?</h2>
+			<p>Please select an option and click the button to visit that page
+                <select id="selPage">
+					<option value="cust">Customer Information</option>
+					<option value="part">Parts &amp; Labor</option>
+					<option value="tech">Technician Details</option>
+                    <option value="serv">Service Repair Details</option>
+				</select>
+                <button type="button" onclick="gotoPage()">GO!</button><br>
+			</p>
+			
+	<p>&nbsp;</p>
+    <img src="images/LukeAppLogo.jpg" alt="Luke's Logo"/>
+	<p>&nbsp;</p>
+    <hr>
+    <p class="copyright">&copy;Luktopia Technological Solutions 2025<p>
+</body>
+
+</html>	

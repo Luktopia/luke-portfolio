@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luktopia FC - Home - IT 238 - Final Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <h1 class="title">Luktopia Financial Consulting</h1>
+            <h3 class="slogan">Taking Advantage of the System Since 1981</h3>
+
+            <button class="navButton" type="button" onclick="location.href='index.html'">Home</button>
+            <button class="navButton" type="button" onclick="location.href='about.html'">About</button>
+            <button class="navButton" type="button" onclick="location.href='subs.html'">Subscribe</button>
+            <button class="navButton" type="button" onclick="location.href='info.html'">Companies</button>
+            <button class="navButton" type="button" onclick="location.href='returns.html'">Returns</button>
+            <button class="navButton" type="button" onclick="location.href='chart.html'">Chart</button>
+            <button class="navButton" type="button" onclick="location.href='advice.html'">Advice</button>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+    <h1>Subscribe to Luktopia Financial Consulting</h1>
+        <section class="spacer">
+            <img class="picSizer" src="img/subscribe.jpg" alt="Pic of a subscription sign">
+        
+            <h2>Subscription costs $99 for a daily pass. $2000 max per month.</h2>
+        </section>
+        
+        <section class="spacer">    
+            <h2>Sign Up Now!</h2>
+            <div class="subForm">
+
+                <input class="subInput" type="text" id="nameInput" placeholder="Enter Name"><br>
+                <input class="subInput" type="text" id="emailInput" placeholder="Enter Email"><br>
+                <input class="subInput" type="text" id="userInput" placeholder="Enter Username"><br>
+                <input class="subInput" type="password" id="passInput" placeholder="Enter Password"><br>
+                                    
+                <button class="aboutButton" type="button" onclick="signUp()">SUBMIT</button>
+            </div>
+            
+            <div id="subOutput" class="aboutCard"></div>
+        </section>
+
+        <section class="spacer">
+            <h2>Why Subscribe?</h2>
+            <p class="textShortener">By subscribing to Luktopia Financial Consulting, you gain access to exclusive financial insights, personalized investment strategies, and expert advice tailored to your unique financial goals. Our team of seasoned professionals is dedicated to helping you navigate the complexities of the financial world, ensuring that you make informed decisions that maximize your returns. Whether you're a seasoned investor or just starting out, our subscription service provides the tools and resources you need to succeed in today's dynamic market. Don't miss out on the opportunity to elevate your financial journey with Luktopia Financial Consulting.</p>
+        </section>
+
+        <section class="spacer">
+            <h2>What Your Subscription Gets You</h2>
+            <p class="textShortener">As a subscriber to Luktopia Financial Consulting, you will receive daily market analysis, exclusive investment tips, and access to our comprehensive financial planning tools. Our expert consultants will provide you with personalized advice tailored to your financial situation, helping you make informed decisions that align with your goals. Additionally, subscribers gain access to our premium content, including in-depth daily reports, webinars, and workshops designed to enhance your financial literacy and investment strategies. With our subscription service, you'll be equipped with the knowledge and resources needed to navigate the ever-changing financial landscape confidently.</p>
+        </section>
+
+        <section class="spacer">
+            <section class="terms">
+                <p class="textShortener">All sales are final. Luktopia not responsible for bad finacial advice. All subscriptions automatically renew for the monthly rate. <br>All investing is to be done at your own risk.</p>
+            </section>
+        </section>
+
+        
+    </main>
+
+
+
+    <footer>
+        <p class="copyright">&copy; 2025 Luktopia Inc.</p>
+    </footer>
+
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+<!-- This is the subscription page where I would have users buy in the site. It just uses a simple sub box and I used some simple input JavaScript to just return the info to the user. -->

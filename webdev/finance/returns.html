@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luktopia FC - Home - IT 238 - Final Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <h1 class="title">Luktopia Financial Consulting</h1>
+            <h3 class="slogan">Taking Advantage of the System Since 1981</h3>
+
+            <button class="navButton" type="button" onclick="location.href='index.html'">Home</button>
+            <button class="navButton" type="button" onclick="location.href='about.html'">About</button>
+            <button class="navButton" type="button" onclick="location.href='subs.html'">Subscribe</button>
+            <button class="navButton" type="button" onclick="location.href='info.html'">Companies</button>
+            <button class="navButton" type="button" onclick="location.href='returns.html'">Returns</button>
+            <button class="navButton" type="button" onclick="location.href='chart.html'">Chart</button>
+            <button class="navButton" type="button" onclick="location.href='advice.html'">Advice</button>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+
+        <h1>Let's Do Some Calculations!!!</h1>
+
+        <section class="spacer">
+            <h2>Calculate With Our Featured Companies</h2>
+                <div class="returnButtons">
+                    <button class="aboutButton" id="totCoValue">Calculate Total Company Value</button>
+                    <button class="aboutButton" id="avgCoValue">Calculate Average Company Value</button>
+                    <button class="aboutButton" id="avgCoMargin">Calculate Average Company Returns</button>
+                </div>
+
+                <div id="returnOut" class="box">Calculate the Data</div>
+        </section>
+
+        <section class="spacer">
+            <h2>Stock Calculation Tips</h2>
+            <img class="picSizer" src="img/calculator.jpg" alt="A calculator"/><br>
+        </section>
+
+        <section class="spacer">            
+            <div>
+                <h3>How to calculate a company's profit margin</h3>
+                <p class="textShortener">Profit margin is one the easiest ways to determine how a company is doing. It can be calculated very simply as well. Just divide the profit by revenue and multiply by 100. Simple!</p>
+            </div>
+        </section>
+        <section class="spacer">            
+            <div>
+                <h3>How to calculate total company value</h3>
+                <p class="textShortener">Total company value, also known as market capitalization, is calculated by multiplying the current stock price by the total number of outstanding shares. This gives you a quick snapshot of a company's overall value in the market.</p>
+            </div>
+        </section>
+        <section class="spacer">            
+            <div>
+                <h3>How to calculate Earnings Per Share (EPS)</h3>
+                <p class="textShortener">Earnings Per Share (EPS) is calculated by dividing a company's net profit by the number of outstanding shares. This metric helps investors understand how much profit is allocated to each share of stock, providing insight into the company's profitability on a per-share basis.</p>
+            </div>
+        </section>
+        <section class="spacer">
+            <div>
+                <h3>How to calculate Price to Earnings Ratio (P/E Ratio)</h3>
+                <p class="textShortener">The Price to Earnings Ratio (P/E Ratio) is calculated by dividing the current market price of a company's stock by its Earnings Per Share (EPS). This ratio provides insight into how much investors are willing to pay for each dollar of earnings, helping to assess whether a stock is overvalued or undervalued.</p>
+            </div>
+        </section>
+        <section class="spacer">
+            <div>
+                <h3>How to calculate Return on Investment (ROI)</h3>
+                <p class="textShortener">Return on Investment (ROI) is calculated by taking the net profit from an investment, dividing it by the initial cost of the investment, and then multiplying by 100 to get a percentage. This metric helps investors evaluate the efficiency and profitability of their investments.</p>
+            </div>
+        </section>
+
+
+        
+    </main>
+
+
+
+    <footer>
+        <p class="copyright">&copy; 2025 Luktopia Inc.</p>
+    </footer>
+
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+<!-- This is the returns page where I allow users to calculate different financial stats based upon the fake companies that are lsited on the info page. I used a box to display the info because I think that makes it look more technical. I used buttons to trigger the calculations and display the results in a designated output area returnOut(box). The rest is just information on how to calculate various financial metrics. -->

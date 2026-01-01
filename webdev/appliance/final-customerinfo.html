@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<title>Final Customer Information</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+	
+    <script type="text/javascript">
+                      
+		function getInfo() 
+		{
+            // Variables for the form input            
+            var inputId = parseInt(document.getElementById("formInput").value);
+            var inputName = document.getElementById("formInput").value; 
+            
+            
+			// Making an array of dictionaries to store customer Information
+            var customers = [
+                { id: 1056, name: "Martena Mccormick", address: "622-1697 In St.", city: "Dublin", zip: "457667", phone: "1-442-332-5525", email: "morbi.accumsan.laoreet@yahoo.org"},
+                { id: 1190, name: "Keelie Mckenzie", address: "Ap #992-2475 Malesuada Road", city: "Suncheon", zip: "F6 3IN", phone: "(286) 207-5418", email: "augue.porttitor.interdum@yahoo.edu"},
+                { id: 1188, name: "Kerry Bernard", address: "Ap #840-3630 A, Rd.", city: "Covington", zip: "5615", phone: "1-611-428-3417", email: "nibh.lacinia@hotmail.edu"},
+                { id: 1246, name: "Leonard Mcmillan", address: "Ap #947-8829 Vitae, St.", city: "Gloucester", zip: "694144", phone: "1-355-883-8447", email: "elit@protonmail.com"},
+                { id: 1476, name: "Briar Cohen", address: "Ap #207-8101 Natoque Rd.", city: "Bregenz", zip: "16685", phone: "(364) 299-1315", email: "condimentum.eget@aol.net"},
+                { id: 1494, name: "Wendy Rivers", address: "746-6795 Pellentesque, Avenue", city: "New Haven", zip: "34700", phone: "1-344-139-7770", email: "at.egestas@protonmail.org"},
+                { id: 1058, name: "Kareem Farmer", address: "Ap #326-6932 Proin Rd.", city: "Meeuwen", zip: "81956", phone: "(873) 466-3463", email: "vel.convallis@protonmail.com"},
+                { id: 1430, name: "Len Walters", address: "102-4075 Posuere Road", city: "Barranca", zip: "49565-3457", phone: "(914) 372-2736", email: "cum.sociis@protonmail.edu"},
+                { id: 1138, name: "Kuame Blevins", address: "Ap #566-1777 Ac Road", city: "Bilaspur", zip: "50109", phone: "1-681-538-7561", email: "sed@hotmail.net"},
+                { id: 1400, name: "Isaiah Goff", address: "246-6659 Aliquam Avenue", city: "Yogyakarta", zip: "504", phone: "1-518-928-4943", email: "sem.elit@yahoo.net"},
+                { id: 1010, name: "Marny Dudley", address: "995-2983 Luctus St.", city: "Oudtshoorn", zip: "7378", phone: "1-243-673-4641", email: "est.mollis@protonmail.edu"},
+                { id: 1338, name: "Ainsley Kemp", address: "868-5965 Aliquet, St.", city: "Sibasa", zip: "46831", phone: "(618) 407-1083", email: "mattis.velit@protonmail.net"},
+                { id: 1204, name: "Axel Noble", address: "1071 Felis. Road", city: "Bostaniçi", zip: "5885 SO", phone: "(877) 771-7732", email: "neque.nullam.ut@yahoo.org"},
+                { id: 1360, name: "Aretha Tyler", address: "2205 Ut Rd.", city: "Zwickau", zip: "237461", phone: "1-792-586-4773", email: "inceptos.hymenaeos@hotmail.ca"},
+                { id: 1108, name: "Kevyn Farley", address: "P.O. Box 663, 3565 Sit Av.", city: "Brahmapur", zip: "15154", phone: "(573) 883-1671", email: "integer@protonmail.org"}
+            ];
+			
+            // Display results in the results div
+            var resultsDiv = document.getElementById("results");
+                
+			for (var i = 0; i < customers.length; i++) {
+                if (customers[i].id === inputId || customers[i].name === inputName) {
+                
+                resultsDiv.innerHTML = `
+                        <p>Name: ${customers[i].name}</p>
+                        <p>Address: ${customers[i].address}</p>
+                        <p>City: ${customers[i].city}</p>
+                        <p>Zip Code: ${customers[i].zip}</p>
+                        <p>Phone: ${customers[i].phone}</p>
+                        <p>Email: ${customers[i].email}</p>
+                    `;
+                }
+                
+            }
+            
+            
+
+		}
+	
+	</script>
+	
+</head>
+
+<body>
+
+	<p>
+		Luke Laricy <br />
+		IT 130-530 <br />
+        Final Project - Appliance Repair Website
+	</p>
+		
+	<hr>
+	
+	<h1>Customer Information</h1>
+	<img src="images/customerinfo.jpg" alt="Customer Service Girl"/>
+	<p>&nbsp;</p>
+		
+		<h2>Customer Lookup</h2>
+			
+			<p>
+                Please enter a customer name or a customer number<br>
+                <input type="text" id="formInput"><br>
+                            
+                <button type="button" onclick="getInfo()">SUBMIT</button>
+			</p>
+		
+        
+        
+    <!-- Using a Div tag so I can display the results -->
+	<div id="results" ></div>	
+			
+			
+			
+	<p>&nbsp;</p>
+    <img src="images/LukeAppLogo.jpg" alt="Luke's Logo"/>
+	<p>&nbsp;</p>
+    
+	<p>Press the button to return to the Main Page<br>
+        <button type="button" onclick="location.href='final-mainpage.html'">Go to the Main Page</button>			
+	</p>
+		
+	<p>&nbsp;</p>
+    <hr>
+    <p class="copyright">&copy;Luktopia Technological Solutions 2025<p>
+</body>
+
+</html>	

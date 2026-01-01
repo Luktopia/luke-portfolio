@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Alan's Allen Wrenches",
+        "profitMargin": 12,
+        "totalValue": 7575000,
+        "image": "img/allen.jpg"
+    },
+    {
+        "name": "Bob's Bobbers",
+        "profitMargin": 9,
+        "totalValue": 55475000,
+        "image": "img/bobber.jpg"
+    },
+    {
+        "name": "Caine's Canes",
+        "profitMargin": 21,
+        "totalValue": 598635000,
+        "image": "img/cane.jpg"
+    },
+    {
+        "name": "Doug's Dogs",
+        "profitMargin": 2,
+        "totalValue": 274000,
+        "image": "img/dog.jpg"
+    },
+    {
+        "name": "Emery's Emery Boards",
+        "profitMargin": 32,
+        "totalValue": 1914250000,
+        "image": "img/emery.jpg"
+    },
+    {
+        "name": "Frank's Frankfurters",
+        "profitMargin": 6,
+        "totalValue": 5340000,
+        "image": "img/frankfurter.jpg"
+    },
+    {
+        "name": "Ginger's Ginger Bread",
+        "profitMargin": 14,
+        "totalValue": 186667000,
+        "image": "img/ginger.jpg"
+    },
+    {
+        "name": "Hazel's Hazelnuts",
+        "profitMargin": 18,
+        "totalValue": 67253000,
+        "image": "img/nuts.jpg"
+    },
+    {
+        "name": "Ivy's Ivory",
+        "profitMargin": 8,
+        "totalValue": 2698425000,
+        "image": "img/ivory.jpg"
+    },
+    {
+        "name": "Johnny's Johnnycakes",
+        "profitMargin": 4,
+        "totalValue": 870000,
+        "image": "img/johnny.jpg"
+    },
+    {
+        "name": "Kim's Kimonos",
+        "profitMargin": 23,
+        "totalValue": 3669782000,
+        "image": "img/kimono.jpg"
+    },
+    {
+        "name": "Leo's Leotards",
+        "profitMargin": 27,
+        "totalValue": 115952000,
+        "image": "img/leotard.jpg"
+    },
+    {
+        "name": "Mike's Microphones",
+        "profitMargin": 19,
+        "totalValue": 74622000,
+        "image": "img/micro.jpg"
+    },
+    {
+        "name": "Nick's Nickels",
+        "profitMargin": 0,
+        "totalValue": 18,
+        "image": "img/nickel.jpg"
+    },
+    {
+        "name": "Ollie's Olives",
+        "profitMargin": 26,
+        "totalValue": 12856000,
+        "image": "img/olive.jpg"
+    },
+    {
+        "name": "Pete's Pizza",
+        "profitMargin": 8,
+        "totalValue": 1969000,
+        "image": "img/pizza.jpg"
+    }
+]

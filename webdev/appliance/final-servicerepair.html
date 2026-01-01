@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	
+	<meta charset="utf-8">
+	<title>Final Service Repair Details</title>
+	
+	<link rel="stylesheet" type="text/css" href="styles/styles.css" />
+	
+    <script type="text/javascript">
+	
+		function getInfo() 
+		{
+            // Variables for the form input
+            var inputId = parseInt(document.getElementById("formInput").value);
+            var inputAll = document.getElementById("formInput").value; 
+            
+            //Variable for radio button selection
+            var servSelection;
+                if (document.getElementById('schS').checked) {
+                    servSelection = document.getElementById('schS').value;
+                } else if (document.getElementById('canS').checked) {
+                    servSelection = document.getElementById('canS').value;
+                } else if (document.getElementById('comS').checked) {
+                    servSelection = document.getElementById('comS').value;
+                } else if (document.getElementById('allS').checked) {
+                    servSelection = document.getElementById('allS').value;
+                } else {
+                    servSelection = 'none';
+                }
+
+			// Making an array of dictionaries to store service repairs information
+            var repairs = [
+                { id: 1000, status: "Scheduled", serviceDate: "03/25/2025", issue: "Washing Machine not filling", custName: "Martena Mccormick", techName: "Lucy Manning"},
+                { id: 1002, status: "Cancelled", serviceDate: "02/01/2025", issue: "Dryer not spinning", custName: "Keelie Mckenzie", techName: "Zane Buck"},
+                { id: 1004, status: "Cancelled", serviceDate: "03/05/2025", issue: "Refrigerator light not working", custName: "Kerry Bernard", techName: "Lucy Manning"},
+                { id: 1006, status: "Scheduled", serviceDate: "03/14/2025", issue: "Freezer ice maker not working", custName: "Leonard Mcmillan", techName: "Lucy Manning"},
+                { id: 1008, status: "Cancelled", serviceDate: "03/10/2025", issue: "Refrigerator water dispenser not working", custName: "Briar Cohen", techName: "Lucy Manning"},
+                { id: 1010, status: "Completed", serviceDate: "02/02/2025", issue: "Dishwasher - no lights", custName: "Wendy Rivers", techName: "Wyatt Parker"},
+                { id: 1012, status: "Scheduled", serviceDate: "03/27/2025", issue: "Furnance not turning on", custName: "Kareem Farmer", techName: "Lucy Manning"},
+                { id: 1014, status: "Completed", serviceDate: "02/18/2025", issue: "Air Conditioner not turning on", custName: "Len Walters", techName: "Sylvester Ortega"},
+                { id: 1016, status: "Scheduled", serviceDate: "02/15/2025", issue: "AC not cooling enough", custName: "Kuame Blevins", techName: "Wyatt Parker"},
+                { id: 1018, status: "Scheduled", serviceDate: "02/13/2025", issue: "Freezer not defrosting", custName: "Isaiah Goff", techName: "Sylvester Ortega"},
+                { id: 1020, status: "Scheduled", serviceDate: "02/21/2025", issue: "Washing machine not turning on", custName: "Kuame Blevins", techName: "Lucy Manning"},
+                { id: 1022, status: "Scheduled", serviceDate: "02/26/2025", issue: "Dryer not turning on", custName: "Marny Dudley", techName: "Zane Buck"},
+                { id: 1024, status: "Scheduled", serviceDate: "03/11/2025", issue: "Refrigerator leaking", custName: "Ainsley Kemp", techName: "Zane Buck"},
+                { id: 1026, status: "Scheduled", serviceDate: "02/28/2025", issue: "Air Conditioner leaking", custName: "Axel Noble", techName: "Zane Buck"},
+                { id: 1028, status: "Scheduled", serviceDate: "02/24/2025", issue: "Freezer leaking", custName: "Aretha Tyler", techName: "Sylvester Ortega"},
+                { id: 1030, status: "Scheduled", serviceDate: "02/08/2025", issue: "Garbage Disposal not spinning", custName: "Kevyn Farley", techName: "Wyatt Parker"}
+            ];
+			            
+            // Display results in the results div
+			var resultsDiv = document.getElementById("results");
+            // Clear the results, so the ALL results don't stack
+            resultsDiv.innerHTML = "";
+		
+            /* Displaying all the info for when user types: ALL
+                where: https://www.w3schools.com/js/js_operators.asp
+                why: I need to concatenate the info and this is the same as typing allOutput = allOutput + output, it just saves time
+                how: using the += operator which is the same as "x=x+y"   */
+            if (inputAll == 'ALL' && servSelection == 'schedServ') {
+                for (var i = 0; i < repairs.length; i++) {
+                    if (repairs[i].status === 'Scheduled') {
+                    
+                    resultsDiv.innerHTML += `
+                        <p>-----------------------------</p>
+                        <p>Service Status: ${repairs[i].status}</p>
+                        <p>Customer Name: ${repairs[i].custName}</p>
+                        <p>Tech Name: ${repairs[i].techName}</p>
+                        <p>Service Date: ${repairs[i].serviceDate}</p> 
+                        <p>Original Issue: ${repairs[i].issue}</p> 
+                        `;
+                    }
+                }
+            }
+            else if (inputAll == 'ALL' && servSelection == 'cancServ') {
+                for (var i = 0; i < repairs.length; i++) {
+                    if (repairs[i].status === 'Cancelled') {
+                    
+                    resultsDiv.innerHTML += `
+                        <p>-----------------------------</p>
+                        <p>Service Status: ${repairs[i].status}</p>
+                        <p>Customer Name: ${repairs[i].custName}</p>
+                        <p>Tech Name: ${repairs[i].techName}</p>
+                        <p>Service Date: ${repairs[i].serviceDate}</p> 
+                        <p>Original Issue: ${repairs[i].issue}</p> 
+                        `;
+                    }
+                }
+            }
+            else if (inputAll == 'ALL' && servSelection == 'compServ') {
+                for (var i = 0; i < repairs.length; i++) {
+                    if (repairs[i].status === 'Completed') {
+                                        
+                    resultsDiv.innerHTML += `
+                        <p>-----------------------------</p>
+                        <p>Service Status: ${repairs[i].status}</p>
+                        <p>Customer Name: ${repairs[i].custName}</p>
+                        <p>Tech Name: ${repairs[i].techName}</p>
+                        <p>Service Date: ${repairs[i].serviceDate}</p> 
+                        <p>Original Issue: ${repairs[i].issue}</p> 
+                        `;
+                   
+                    }
+                }
+            }    
+            else if (inputAll == 'ALL' && servSelection == 'allServ') {
+                for (var i = 0; i < repairs.length; i++) {
+                                                            
+                    resultsDiv.innerHTML += `
+                        <p>-----------------------------</p>
+                        <p>Service Status: ${repairs[i].status}</p>
+                        <p>Customer Name: ${repairs[i].custName}</p>
+                        <p>Tech Name: ${repairs[i].techName}</p>
+                        <p>Service Date: ${repairs[i].serviceDate}</p> 
+                        <p>Original Issue: ${repairs[i].issue}</p> 
+                        `;
+                                  
+                }
+            }
+            else if (inputAll == 'ALL' && servSelection == 'none') {
+                alert("Please select a service status!!!")
+            }
+            else {
+                for (var i = 0; i < repairs.length; i++) {
+                    if (repairs[i].id === inputId) {
+                    
+                    resultsDiv.innerHTML = `
+                        <p>-----------------------------</p>
+                        <p>Service Status: ${repairs[i].status}</p>
+                        <p>Customer Name: ${repairs[i].custName}</p>
+                        <p>Tech Name: ${repairs[i].techName}</p>
+                        <p>Service Date: ${repairs[i].serviceDate}</p> 
+                        <p>Original Issue: ${repairs[i].issue}</p> 
+                        `;
+                    }
+                    
+                    
+                }
+            }
+        
+		}
+	
+	</script>
+    
+    
+	
+</head>
+
+<body>
+
+	<p>
+		Luke Laricy <br />
+		IT 130-530 <br />
+        Final Project - Appliance Repair Website
+	</p>
+		
+	<hr>
+	
+	<h1>Service Repair Details</h1>
+	<img src="images/servicerepair.jpg" alt="Picture of Service Repair Person"/>
+	<p>&nbsp;</p>
+	
+			<h2>Service Status Lookup</h2>
+			
+			<p>
+                Please enter a Service ID or the word "ALL"<br>
+                <input type="text" id="formInput"><br>
+                                        
+                <!-- Made a radio button select option and labeled it using the label tag, made the names the same so the user could only select one option - https://www.w3schools.com/html/html_form_input_types.asp -->
+                Please select service status:<br>
+                <form>
+                      <input type="radio" id="schS" name="servSelector" value="schedServ">
+                      <label for="schS">Scheduled</label><br>
+                      <input type="radio" id="canS" name="servSelector" value="cancServ">
+                      <label for="canS">Cancelled</label><br>
+                      <input type="radio" id="comS" name="servSelector" value="compServ">
+                      <label for="comS">Completed</label><br>
+                      <input type="radio" id="allS" name="servSelector" value="allServ">
+                      <label for="allS">All</label>
+                </form><br>
+                
+                
+                <button type="button" onclick="getInfo()">SUBMIT</button>
+			
+			
+			</p>
+        
+    <!-- Using a Div tag so I can display the results -->
+	<div id="results" ></div>	
+			
+			
+			
+
+
+			
+	<p>&nbsp;</p>
+    <img src="images/LukeAppLogo.jpg" alt="Luke's Logo"/>
+	<p>&nbsp;</p>
+    
+	<p>Press the button to return to the Main Page<br>
+        <button type="button" onclick="location.href='final-mainpage.html'">Go to the Main Page</button>			
+	</p>
+			
+	<p>&nbsp;</p>
+    <hr>
+    <p class="copyright">&copy;Luktopia Technological Solutions 2025<p>
+
+
+</body>
+
+</html>	

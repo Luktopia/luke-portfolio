@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+  background-color: #acffc1;
+  color: #000124;
+  font-family: "Roboto", Verdana, sans-serif;
+  margin: 15px;
+}
+
+h1 {
+    color: #0004de;
+    font-family: "Merriweather", Tahoma, serif;
+}
+
+h2 {
+    color: #0003a3;
+    font-family: "Merriweather", Tahoma, serif;
+}
+
+h3 {
+    color: #00025e;
+    font-family: "Merriweather", Tahoma, serif;
+}
+
+header {
+    text-align: center;
+    border-bottom: #0004de solid 5px;
+    box-shadow: #000124 0px 2px 5px;
+    background-color: #00b75c;
+    padding-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    border-top: #0004de solid 2px;
+    margin-top: 30px;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+hr {
+    height: 1px;
+    background-color: #0004de;
+}
+
+
+.title {
+    font-family: "DM Serif Text", serif;
+    color: #0004de;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold; 
+}
+
+.slogan {
+    font-family: "DM Serif Text", serif;
+    color: #0004de;
+    text-align: center; 
+    font-size: smaller;    
+}
+
+.navButton {
+    text-align: center;
+    background-color: #0004de;
+    color: white;
+    font-family: "Merriweather", serif;
+    padding: 10px;
+    border: 5px solid #00025e;
+    border-radius: 10px;
+}
+
+.navButton:hover {
+    background-color: white;
+    color: #0004de;
+    cursor: pointer;
+}
+
+.copyright {   
+	font-family: georgia, geneva, sans-serif;
+ 	color: #00025e; 
+    text-align: center;     
+    font-weight: bold;     
+    font-size: smaller;     
+}
+
+.imgSmall {
+    max-width: 20%;
+    height: auto;
+}
+
+.pText {
+    margin-right: 1350px;
+}
+
+.imgCash {
+    max-width: 37%;
+    height: auto;
+}
+
+.pTextList {
+    margin-right: 1500px;
+}
+

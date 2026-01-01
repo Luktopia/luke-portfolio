@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luktopia FC - Home - IT 238 - Final Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <h1 class="title">Luktopia Financial Consulting</h1>
+            <h3 class="slogan">Taking Advantage of the System Since 1981</h3>
+
+            <button class="navButton" type="button" onclick="location.href='index.html'">Home</button>
+            <button class="navButton" type="button" onclick="location.href='about.html'">About</button>
+            <button class="navButton" type="button" onclick="location.href='subs.html'">Subscribe</button>
+            <button class="navButton" type="button" onclick="location.href='info.html'">Companies</button>
+            <button class="navButton" type="button" onclick="location.href='returns.html'">Returns</button>
+            <button class="navButton" type="button" onclick="location.href='chart.html'">Chart</button>
+            <button class="navButton" type="button" onclick="location.href='advice.html'">Advice</button>
+        </div>
+    </header>
+    <div class="controls">
+
+        <select id="sort">
+            <option value="value-desc">Sort by: Total Value - High to Low</option>
+            <option value="value-asc">Sort by: Total Value - Low to High</option>
+            <option value="profit-desc">Sort by: Profit Margin - High to Low</option>
+            <option value="profit-asc">Sort by: Profit Margin - Low to High</option>
+        </select>
+
+    </div>
+
+
+    <main class="wrap">
+
+        <h1 class="topHead">Company Financial Information</h1>
+        <section class="spacer">
+            <div id="company-list" class="grid"></div>
+        </section>
+
+        <section class="spacer">
+            <div class="marginCard">
+                <h3>How to Evaluate a Company's Profit Margin</h3>
+                <p>
+                    <ul>
+                        <li>If a company's profit marin is above 20% it is said to be profitable</li>
+                        <li>If a company's profit margin is between 10% and 20% it is said to be average</li>
+                        <li>If a company's profit margin is below 10% it is said to be poor</li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+        
+    </main>
+
+
+
+    <footer>
+        <p class="copyright">&copy; 2025 Luktopia Inc.</p>
+    </footer>
+
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
+
+<!-- This is the page where I list company info. I used a sort dropdown to allow users to sort companies by different metrics. The rest is just a grid that displays the companies using JavaScript to pull from a JSON file. I added a little info at the end to explain profit margins. I also used css to change the color of the profit margin to red, yellow, and green depending on the value. -->
