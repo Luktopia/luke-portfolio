@@ -8,14 +8,19 @@
 </head>
 <body>
     <header>
-        <div class="wrap">
-            <h1 class="title">Lukas Laricy</h1>
-            <h3 class="slogan">IT Professional</h3>
+        <div class="wrap header-inner">
+            <div class="branding">
+                <h1 class="title">Lukas Laricy</h1>
+                <h3 class="slogan">IT Professional</h3>
+            </div>
 
-            <button class="navButton" type="button" onclick="location.href='/index.html'">About Luke</button>
-            <button class="navButton" type="button" onclick="location.href='/webdev.html'">Websites</button>
-            <button class="navButton" type="button" onclick="location.href='/coding.html'">Code</button>
-            <button class="navButton" type="button" onclick="location.href='/writing.html'">Writings</button>
+            <nav class="nav">
+                <div class="navGlow"><button class="navButton" onclick="location.href='/index.html'">About Luke</button></div>
+                <div class="navGlow"><button class="navButton" onclick="location.href='/webdev.html'">Websites</button></div>
+                <div class="navGlow"><button class="navButton" onclick="location.href='/coding.html'">Code</button></div>
+                <div class="navGlow"><button class="navButton" onclick="location.href='/writing.html'">Writings</button></div>
+            </nav>
+
         </div>
     </header>
 
@@ -75,12 +80,39 @@
 
 
 
-            <img class="picCenter" src="img/Luke.jpg" alt="A Picture of Luke"/><br>
+            <div class="about-wrapper">
+                
+                <div class="about-photo-container">
+                    <img class="about-photo" src="img/Luke.jpg" alt="A Picture of Luke">
+                </div>
 
-            <section class="about">
-                <h2>About Luke</h2>
-                    <p>Licensed Real Estate Broker for over 20 years in Illinois. Extensive experience in customer service and sales. Extensive experience with time management and meeting deadlines. Experienced in leading teams of employees, managing employees, and training new employees. Safety trained in food service, industrial, chemical, and laboratory environments. Current student at DePaul University earning a Bachelor in Science with a focus in Information Technology. Dean's List. Associate in Applied Science Cum Laude with a focus in Information Technology from Moraine Valley College. President's List. Phi Theta Kappa honors society member. Associate in Arts with a focus in History from Moraine Valley College. CompTia A+, Network+, and Security+ certified. Certified by Moraine Valley College as a Computer Support Associate, Computer Technician, Network Security Associate, Cisco Network Associate, LAN Technician, and Network Administrator. Arduino certified. Extensive experience working with computer hardware and networks. Proficient with Microsoft Windows and Office. Experience with HTML, CSS, Javascript, SQL, Java, and Python. Experience with Cisco IOS, Red Hat Enterprise Linux, Kali Linux, Ubuntu, and Windows Server. Extensive experience with home theater design and installation. Professional bartender, server, and party coordinator. Avid reader.</p>
-            </section>
+
+                <section class="about">
+                    <h2>About Luke</h2>
+                        <ul>
+                            <li>Licensed Real Estate Broker for over 20 years in Illinois.</li>
+                            <li>Extensive experience in customer service and sales.</li>
+                            <li>Extensive experience with time management and meeting deadlines.</li>
+                            <li>Experienced in leading teams of employees, managing employees, and training new employees.</li>
+                            <li>Safety trained in food service, industrial, chemical, and laboratory environments.</li>
+                            <li>Current student at DePaul University earning a Bachelor in Science with a focus in Information Technology. Dean's List.</li>
+                            <li>Associate in Applied Science Cum Laude with a focus in Information Technology from Moraine Valley College. President's List.</li>
+                            <li>Phi Theta Kappa honors society member.</li>
+                            <li>Associate in Arts with a focus in History from Moraine Valley College.</li>
+                            <li>CompTia A+, Network+, and Security+ certified.</li>
+                            <li>Certified by Moraine Valley College as a Computer Support Associate, Computer Technician, Network Security Associate, Cisco Network Associate, LAN Technician, and Network Administrator.</li>
+                            <li>Arduino certified.</li>
+                            <li>Extensive experience working with computer hardware and networks.</li>
+                            <li>Proficient with Microsoft Windows and Office.</li>
+                            <li>Experience with HTML, CSS, Javascript, SQL, Java, and Python.</li>
+                            <li>Experience with Cisco IOS, Red Hat Enterprise Linux, Kali Linux, Ubuntu, and Windows Server.</li>
+                            <li>Extensive experience with home theater design and installation.</li>
+                            <li>Professional bartender, server, and party coordinator.</li>
+                            <li>Avid reader.</li>
+                        </ul>
+                </section>
+
+            </div>
     
             <h2 class="spacer">Degrees and Certifications</h2>
                 

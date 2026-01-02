@@ -1,4 +1,9 @@
+/* ---------------------------- Imports ---------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* ---------------------------- Reset & Global ---------------------------- */
 
 * {
   box-sizing: border-box;
@@ -13,13 +18,15 @@ html, body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* prevents sticky header overlap */
 }
 
 body {
-  font: 15px/1.5 "Roboto",'Segoe UI', sans-serif;
-  font-family: "Roboto",'Segoe UI', sans-serif;
-  background: #D4D4D4; 
-  color: #000000;
+  font: 15px/1.6 "Roboto", 'Segoe UI', sans-serif;
+  background: #0b0f19;
+  color: #e5e7eb;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .wrap {
@@ -28,31 +35,25 @@ body {
   padding: 1.25rem;
 }
 
-header {
-  position: sticky;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-  background: linear-gradient(135deg, #D4D4D4, #ABABAB);
-  border-bottom: 1px solid #7A7A7A;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.347);
+a {
+  transition: color 0.25s ease;
 }
 
-footer {
-    text-align: center;
-    background: linear-gradient(135deg, #D4D4D4, #ABABAB);
-    border-top: 1px solid #7A7A7A;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    position: static;
-    left: 0;
-    bottom: 0;
+:focus-visible {
+  outline: 2px solid #6a0dad;
+  outline-offset: 3px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ---------------------------- Typography ---------------------------- */
+
+h1, h2, h3 {
+  color: #f3f4f6;
 }
 
 h1 {
@@ -60,64 +61,30 @@ h1 {
   font-family: "Merriweather", serif;
   font-size: 2rem;
   font-weight: 600;
-  color: #000000;
-  position: relative;
 }
 
 h2 {
-    font-family: "Merriweather", serif;
-    color: #041e13;
-    font-size: 24px;
-}
-
-.title {
-    font-family: "DM Serif Text", serif;
-    color: #000000;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold; 
-}
-
-.slogan {
-    font-family: "DM Serif Text", serif;
-    color: #212121;
-    text-align: center; 
-    font-size: smaller;    
-}
-
-.navButton {
-    text-align: center;
-    background-color: #212121;
-    color: white;
-    font-family: "Merriweather", serif;
-    padding: 10px;
-    border: 5px solid #000000;
-    border-radius: 10px;
-}
-
-.navButton:hover {
-    background-color: white;
-    color: #212121;
-    cursor: pointer;
-}
-
-.copyright {   
-	font-family: georgia, serif;
- 	color: #212121; 
-    text-align: center;     
-    font-weight: bold;     
-    font-size: smaller;     
-}
-
-.spacer {
-    margin-top: 1rem;
-    padding-top: 2rem;
-    margin-bottom: 1rem;
+  font-family: "Merriweather", serif;
+  font-size: 24px;
 }
 
 .textShortener {
-    display: inline-block;
-    max-width: 800px;
+  display: inline-block;
+  max-width: 800px;
+}
+
+.topHead {
+  text-align: center;
+  font-weight: bold;
+}
+
+
+/* ---------------------------- Layout Helpers ---------------------------- */
+
+.spacer {
+  margin-top: 1rem;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .picSizer {
@@ -128,24 +95,141 @@ h2 {
 .picCenter {
   width: 500px;
   height: auto;
-  margin: 0 auto; 
+  margin: 0 auto;
   display: block;
 }
 
-.topHead {
-  text-align: center;
-  font-weight: bold;
+
+/* ---------------------------- Images ---------------------------- */
+
+.about-photo,
+.project-img {
+  border: 2px solid #1f2937;
+  border-radius: 8px;
 }
 
-.contact {
-  background: #ececec;          
-  border: 1px solid #ccc;
+
+/* ---------------------------- Header ---------------------------- */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0b0f19, #111827);
+  border-bottom: 1px solid #1f2937;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.75rem 0;
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-family: "DM Serif Text", serif;
+  color: #f3f4f6;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.slogan {
+  font-family: "DM Serif Text", serif;
+  color: #9ca3af;
+  font-size: smaller;
+  margin: -4px 0 0;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.navGlow {
+  position: relative;
+  padding: 3px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #0a1a4f, #6a0dad);
+  transition: all 0.35s ease;
+}
+
+.navGlow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: inherit;
+  z-index: -1;
+  transition: filter 0.35s ease;
+}
+
+.navGlow:hover::before {
+  background: linear-gradient(90deg, #0a1a4f, #9b30ff);
+  filter: blur(1.2em);
+}
+
+.navButton {
+  background-color: #111827;
+  color: #e5e7eb;
+  font-family: "Merriweather", serif;
+  padding: 10px 16px;
+  border: none;
   border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.navButton:hover {
+  background-color: #e5e7eb;
+  color: #111827;
+  transform: translateY(-2px);
+}
+
+
+/* ---------------------------- Footer ---------------------------- */
+
+footer {
+  text-align: center;
+  background: linear-gradient(135deg, #0b0f19, #111827);
+  border-top: 1px solid #1f2937;
+  color: #9ca3af;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  padding: 0.5rem 0;
+}
+
+.copyright {
+  font-family: Georgia, serif;
+  color: #e5e7eb;
+  font-weight: bold;
+  font-size: smaller;
+}
+
+
+/* ---------------------------- Contact Card ---------------------------- */
+
+.contact {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
   padding: 1.25rem;
   margin: 2rem auto;
-  max-width: 400px;             
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: left;            
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  text-align: left;
 }
 
 .contact-list {
@@ -163,45 +247,68 @@ h2 {
 
 .contact-list .icon {
   margin-right: 0.5rem;
-  color: #333; /* neutral icon color */
-  display: flex;
-  align-items: center;
+  color: #c084fc;
 }
 
 .contact-list .label {
   font-weight: 600;
-  color: #333;
+  color: #c084fc;
   margin-right: 0.5rem;
   min-width: 70px;
 }
 
 .contact-list a {
-  color: #1F1F1F;
+  color: #93c5fd;
   text-decoration: none;
-  transition: color 0.3s;
 }
 
 .contact-list a:hover {
-  color: #555;
+  color: #c084fc;
+}
+
+
+/* ---------------------------- About Section ---------------------------- */
+
+.about-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.about-photo {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 2px solid #1f2937;
 }
 
 .about {
-  background: #ececec;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  background: #111827;
+  border: 1px solid #1f2937;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  border-radius: 12px;
   padding: 1.5rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   line-height: 1.6;
+  flex: 1;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo {
+    margin: 0 auto;
+  }
 }
 
 
-
-
-
-
-/****************  Cert Grid **********************/
+/* ---------------------------- Cert Grid ---------------------------- */
 
 .grid {
   display: grid;
@@ -211,27 +318,27 @@ h2 {
 }
 
 .certCard {
-  background: #ffffff;
-  border: 1px solid #C9C9C9;
+  background: #111827;
+  border: 1px solid #1f2937;
   border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.08s ease, box-shadow 0.08s ease, border-color 0.1s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
 }
 
 .certCard:hover {
-  background: #ececec;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  border-color: #1F1F1F;
+  background: #1f2937;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  border-color: #4c1d95;
   cursor: pointer;
 }
 
 .thumb {
   width: 100%;
   display: block;
-  background: #0b1325;
   object-fit: cover;
 }
 
@@ -245,25 +352,24 @@ h2 {
   margin: 0.5rem 0 0.25rem;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #1F1F1F;
+  color: #f3f4f6;
 }
 
 .cert-info div {
   font-size: 0.95rem;
+  color: #9ca3af;
 }
 
-/************** Modal Styles ***********************/
+
+/* ---------------------------- Modal ---------------------------- */
 
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
-  z-index: 1000; 
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 1000;
+  inset: 0;
   overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0,0,0,0.85);
 }
 
 .modal-content {
@@ -271,13 +377,13 @@ h2 {
   display: block;
   max-width: 90%;
   max-height: 90%;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 #caption {
   margin: 15px auto;
   text-align: center;
-  color: #ccc;
+  color: #c084fc;
   font-size: 1rem;
 }
 
@@ -289,78 +395,90 @@ h2 {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
-}
-.close:hover {
-  color: #bbb;
+  transition: color 0.2s ease;
 }
 
-/*************** Project Styles ******************/
+.close:hover {
+  color: #c084fc;
+}
+
+
+/* ---------------------------- Project Cards ---------------------------- */
 
 .project {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
   margin: 2rem 0;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  border-color: #4c1d95;
 }
 
 .project-img {
-  width: 250px;       /* adjust size */
+  width: 250px;
   height: auto;
-  border-radius: 6px;
+  border-radius: 8px;
   object-fit: cover;
 }
 
 .project-info {
-  flex: 1;            /* text takes remaining space */
+  flex: 1;
 }
 
 .project-info h2 {
   margin-top: 0;
   font-family: "Merriweather", serif;
   font-size: 1.4rem;
-  color: #1F1F1F;
+  color: #f3f4f6;
 }
 
 .project-info p {
+  color: #9ca3af;
   margin: 0.5rem 0 1rem;
   line-height: 1.6;
 }
 
 .project-link {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #212121;
-  color: #fff;
+  padding: 0.6rem 1.2rem;
+  background: #6a0dad;
+  color: #f3f4f6;
   text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .project-link:hover {
-  background: #555;
+  background: #9b30ff;
+  transform: translateY(-2px);
 }
 
 
-/*************** Coding Styles ******************/
+/* ---------------------------- Coding Cards ---------------------------- */
 
 .code-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  margin: 40px 0;
-  border: 1px solid #C9C9C9;
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .code-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.6);
 }
 
 .code-card-header {
@@ -374,7 +492,7 @@ h2 {
   font-size: 1.4rem;
   margin: 0;
   font-family: "Merriweather", serif;
-  color: #1F1F1F;
+  color: #f3f4f6;
 }
 
 .badges {
@@ -383,17 +501,17 @@ h2 {
 }
 
 .badge {
-  background: #f3f4f6;
+  background: #1f2937;
   padding: 4px 10px;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #374151;
+  color: #c084fc;
 }
 
 .code-description {
   margin: 12px 0 20px;
-  color: #4b5563;
+  color: #9ca3af;
   font-size: 0.95rem;
   line-height: 1.5;
 }
@@ -402,65 +520,68 @@ h2 {
   display: inline-block;
   margin-top: 18px;
   padding: 10px 16px;
-  background: #212121;
-  color: #ffffff;
+  background: #6a0dad;
+  color: #f3f4f6;
   border-radius: 8px;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .github-button:hover {
-  background: #555;
+  background: #9b30ff;
+  transform: translateY(-2px);
 }
 
-/*************** Writing Styles ******************/
+
+/* ---------------------------- Writing Cards ---------------------------- */
 
 .writing-card {
-    background: #ffffff;
-    border: 1px solid #C9C9C9;
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border-left: 6px solid #212121;
-    padding-left: 1.25rem;
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-left: 6px solid #4c1d95;
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .writing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  border-color: #4c1d95;
 }
 
 .writing-card h2 {
-    margin-top: 0;
-    font-family: "Merriweather", serif;
-    font-size: 1.4rem;
-    color: #1F1F1F;
-    background: linear-gradient(90deg, #f5f5f5, #ffffff);
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
+  margin-top: 0;
+  font-family: "Merriweather", serif;
+  font-size: 1.4rem;
+  color: #f3f4f6;
+  background: linear-gradient(90deg, #1f2937, #111827);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
 }
 
 .writing-description {
-    margin: 0.75rem 0 1.25rem;
-    line-height: 1.6;
-    color: #333;
+  margin: 0.75rem 0 1.25rem;
+  line-height: 1.6;
+  color: #9ca3af;
 }
 
 .writing-button {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background: #212121;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: background 0.3s;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #6a0dad;
+  color: #f3f4f6;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .writing-button:hover {
-    background: #555;
+  background: #9b30ff;
+  transform: translateY(-2px);
 }
