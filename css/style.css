@@ -585,3 +585,66 @@ footer {
   background: #9b30ff;
   transform: translateY(-2px);
 }
+
+/* ============================
+   Mobile Improvements (max 768px)
+   ============================ */
+@media (max-width: 768px) {
+
+    /* Header stacks vertically */
+    .header-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    /* Navigation buttons wrap and center */
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .navButton {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* About section stacks vertically */
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-photo-container {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .about-photo {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Contact list spacing */
+    .contact-list {
+        gap: 0.75rem;
+    }
+
+    /* Grid items (certificates, projects) become 1-column */
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-img {
+        width: 100%;
+        height: auto;
+    }
+}
