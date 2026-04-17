@@ -31,7 +31,110 @@
 
     <h1 class="topHead">Coding Examples</h1>
 
-    <!-- Code Card 1 -->
+
+        <!-- Code Card 1 -->
+
+    <section class="code-card">
+
+        <div class="code-card-header">
+            <h2>Java Library Manager</h2>
+            <div class="badges">
+                <span class="badge">Java</span>
+                <span class="badge">OOP</span>
+                <span class="badge">Data Structures</span>
+            </div>
+        </div>
+
+        <p class="code-description">
+            A full Java application that manages a library collection using object‑oriented design.
+            Includes abstract base classes, subclass specialization, sorting, filtering, serialization,
+            JUnit testing, and a command‑line shell for user interaction. Demonstrates strong OOP
+            architecture, clean class hierarchy, and persistent storage using Java serialization.
+        </p>
+
+    <pre><code class="language-java">
+public class LibraryManager implements Iterable&lt;LibraryItem&gt;, Serializable {
+    private HashMap&lt;String, LibraryItem&gt; col;
+
+    public LibraryManager() {
+        col = new HashMap&lt;&gt;(500, 0.6f);
+    }
+
+    public void addItem(LibraryItem item) {
+        col.put(item.getCatalogNum(), item);
+    }
+
+    public ArrayList&lt;LibraryItem&gt; getAll() {
+        ArrayList&lt;LibraryItem&gt; all = new ArrayList&lt;&gt;(col.values());
+        Collections.sort(all);
+        return all;
+    }
+
+    public LibraryItem getByCatalogNum(String catalogNum) {
+        return col.get(catalogNum);
+    }
+
+    public ArrayList&lt;LibraryItem&gt; getByYear(int year) {
+        ArrayList&lt;LibraryItem&gt; list = new ArrayList&lt;&gt;();
+        for (LibraryItem item : col.values()) {
+            if (item.getYear() == year) list.add(item);
+        }
+        Collections.sort(list);
+        return list;
+    }
+
+    public ArrayList&lt;LibraryItem&gt; getCheckedOut() {
+        ArrayList&lt;LibraryItem&gt; list = new ArrayList&lt;&gt;();
+        for (LibraryItem item : col.values()) {
+            if (item.isCheckedOut()) list.add(item);
+        }
+        Collections.sort(list);
+        return list;
+    }
+
+    public int getCount() {
+        return col.size();
+    }
+
+    @Override
+    public Iterator&lt;LibraryItem&gt; iterator() {
+        return col.values().iterator();
+    }
+
+    public void load() {
+        try {
+            FileInputStream fis = new FileInputStream("library-items.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            col = (HashMap&lt;String, LibraryItem&gt;) ois.readObject();
+            ois.close();
+        } catch (Exception e) {
+            System.out.println("Load failed: " + e.getMessage());
+        }
+    }
+
+    public void save() {
+        try {
+            FileOutputStream fos = new FileOutputStream("library-items.ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(col);
+            oos.close();
+        } catch (Exception e) {
+            System.out.println("Save failed: " + e.getMessage());
+        }
+    }
+}
+    </code></pre>
+
+        <a class="github-button" 
+        href="https://github.com/Luktopia/luke-it313-librarymanager" 
+        target="_blank">
+            View Full Project on GitHub
+        </a>
+
+    </section>
+
+
+    <!-- Code Card 2 -->
     <section class="code-card">
         <div class="code-card-header">
             <h2>Bank Account Class</h2>
@@ -70,7 +173,7 @@ class BankAccount:
         </a>
     </section>
 
-    <!-- Code Card 2 -->
+    <!-- Code Card 3 -->
 
     <section class="code-card">
         <div class="code-card-header">
@@ -114,7 +217,7 @@ class Database:
         </a>
     </section>
 
-    <!-- Code Card 3 -->
+    <!-- Code Card 4 -->
 
     <section class="code-card">
         <div class="code-card-header">
@@ -195,7 +298,7 @@ def driver():
         </a>
     </section>
 
-    <!-- Code Card 4 -->
+    <!-- Code Card 5 -->
 
     <section class="code-card">
         <div class="code-card-header">
