@@ -32,6 +32,66 @@
     <h1 class="topHead">Coding Examples</h1>
 
 
+    <!-- Code Card 6 -->
+    <section class="code-card">
+
+        <div class="code-card-header">
+            <h2>.NET AI‑Powered Computer Shop</h2>
+            <div class="badges">
+                <span class="badge">C#</span>
+                <span class="badge">ASP.NET Core MVC</span>
+                <span class="badge">Entity Framework</span>
+                <span class="badge">AI Integration</span>
+            </div>
+        </div>
+
+        <p class="code-description">
+            A full ASP.NET Core MVC application that allows customers to build and order custom PCs.
+            The system includes server-side validation, a SQL Server database using Entity Framework,
+            dynamic pricing logic, and an integrated AI chatbot powered by OpenAI's ChatClient.
+            The chatbot analyzes the user's selections and provides personalized hardware recommendations.
+        </p>
+
+    <pre><code class="language-csharp">
+[HttpPost]
+public async Task<IActionResult> Chat([FromBody] ChatRequest request)
+{
+    if (string.IsNullOrWhiteSpace(request.Question))
+        return BadRequest(new { error = "Question is required." });
+
+    var selectionSummary =
+        $"Current selection: Base Machine = {request.BaseMachine ?? "None"}, " +
+        $"CPU = {request.CPU ?? "None"}, RAM = {request.RAM} GB, " +
+        $"Windows Pro = {request.WindowsPro}, LED Lighting = {request.LEDLighting}, " +
+        $"Liquid Cooling = {request.LiquidCooling}.";
+
+    var messages = new List&lt;ChatMessage&gt;
+    {
+        new SystemChatMessage(
+            "You are the in-store AI assistant for Luke's Computer Shop. " +
+            "Recommend ONLY items the store sells and ask follow-up questions first."
+        ),
+        new UserChatMessage(selectionSummary),
+        new UserChatMessage(request.Question)
+    };
+
+    var response = await _chatClient.CompleteChatAsync(messages);
+    var reply = response.Value.Content[0].Text;
+
+    return Json(new { reply });
+}
+    </code></pre>
+
+        <a class="github-button"
+        href="https://github.com/Luktopia/luke-it330-chatbot"
+        target="_blank">
+        View Full Project on GitHub
+        </a>
+
+    </section>
+
+
+
         <!-- Code Card 1 -->
 
     <section class="code-card">

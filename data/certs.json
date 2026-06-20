@@ -1,5 +1,10 @@
 [
     {
+        "name": "Bachelor's of Science",
+        "issuer": "DePaul University",
+        "image": "img/coming-soon.jpg"
+    },
+    {
         "name": "A+ Certification",
         "issuer": "CompTIA",
         "image": "img/CompTIA-APlus.png"
@@ -13,6 +18,11 @@
         "name": "Security+ Certification",
         "issuer": "CompTIA",
         "image": "img/CompTIA-SecPlus.png"
+    },
+    {
+        "name": "Upsilon Pi Epsilon Honor Society",
+        "issuer": "DePaul University",
+        "image": "img/coming-soon.jpg"
     },
     {
         "name": "Associate in Applied Science",
