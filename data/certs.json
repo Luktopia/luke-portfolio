@@ -1,8 +1,8 @@
 [
     {
-        "name": "Bachelor in Science",
+        "name": "Bachelor of Science",
         "issuer": "DePaul University",
-        "image": "img/coming-soon.jpg"
+        "image": "img/DePaul-BachelorofScience.jpg"
     },
     {
         "name": "A+ Certification",
@@ -22,7 +22,7 @@
     {
         "name": "Upsilon Pi Epsilon Honor Society",
         "issuer": "DePaul University",
-        "image": "img/coming-soon.jpg"
+        "image": "img/DePaul-UpsilonPiEpsilon.jpg"
     },
     {
         "name": "Associate in Applied Science",
